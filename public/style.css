@@ -35,6 +35,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 90%;
+    display: block;
     margin: auto;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -90,7 +91,23 @@ button[type="submit"]:focus {
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
 }
-
+select[class="select"]{
+    width: 225px;
+    display: block;
+    border-radius: 5px;
+    margin: auto;
+    padding: .575rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .topbar{
     display:flex;
     justify-content: space-between;
@@ -314,4 +331,14 @@ table {
     background-color: #007bff;
     border-radius: 2px;
     color: white !important;
+}
+
+.row_form_container{
+    padding: 20px;
+}
+.form_row{
+    display: flex;
+    gap : 20px;
+    justify-content: center;
+    align-items: center;
 }

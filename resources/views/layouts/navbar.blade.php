@@ -23,7 +23,7 @@
                     <x-nav-link :href="route('area_master_form.request_form')" :active="request()->routeIs('area_master_form')" class="side_bar_sub_menu_one"> 
                         {{ __('Area Master') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('Request_form.request_form')" :active="request()->routeIs('request_form')" class="side_bar_sub_menu"> 
+                    <x-nav-link :href="route('building_master_form.request_form')" :active="request()->routeIs('building_master_form')" class="side_bar_sub_menu"> 
                         {{ __('Building Master') }}
                     </x-nav-link>
                     

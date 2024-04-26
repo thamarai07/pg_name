@@ -2,10 +2,11 @@
     <div class="">
         <div class="">
             <div class="">
+
                <table class="table-container">
                 <tr>
                     <th>No</th>
-                    <th>Area</th>
+                    <th>Area Name</th>
                     <th>Area Pincode</th>
                     <th>Action</th>
                     <th>Delete</th>
@@ -16,11 +17,11 @@
                 @foreach ($requests as $request)
                 <tr>
                     <td>{{ $counter++ }}</td>
-                    <td>{{ $request->form_request_category }}</td>
-                    <td>{{ $request->form_request_field_name }}</td>
-                    <td><a href="{{ route('requests_form_details.Viewdetails', $request->id) }}">View</a></td>
+                    <td>{{ $request->area_name }}</td>
+                    <td>{{ $request->area_pincode }}</td>
+                    <td><a href="{{ route('area_master_details.Viewdetails', $request->id) }}">View</a></td>
                     <td>
-                        <form method="POST" action="{{ route('requests_form_details_delete.deleteDetails', $request->id) }}">
+                        <form method="POST" action="{{ route('area_master_details_delete.deleteDetails', $request->id) }}">
                             @csrf
                             @method('PUT')
                             <input type="hidden" name="id" value="{{ $request->id }}">
