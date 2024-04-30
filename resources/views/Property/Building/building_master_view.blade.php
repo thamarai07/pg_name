@@ -17,12 +17,17 @@
                         <tr>
                             <td>{{ $counter++ }}</td>
                             <td>{{ $request->building_name }}</td>
-                            <td>{{ $request->area_name }}</td>
+                            @foreach ($dropdownData as $item)
+                            @if ($item->id == $request->area_name)
+                            <td>{{  $item->area_name }}</td>
+
+                            @endif
+                            @endforeach
                             <td>{{ $request->building_owner_name }}</td>
                             <td>{{ $request->number_of_rooms_in_building }}</td>
                             <td><a href="{{ route('building_master_details.Viewdetails', $request->id) }}">View</a></td>
                             <td>
-                                <form method="POST" action="{{ route('area_master_details_delete.deleteDetails', $request->id) }}">
+                                <form method="POST" action="{{ route('building_master_details_delete.deleteDetails', $request->id) }}">
                                     @csrf
                                     @method('PUT')
                                     <input type="hidden" name="id" value="{{ $request->id }}">

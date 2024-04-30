@@ -380,3 +380,57 @@ table {
     color: red;
     list-style-type: none;
   }
+
+  .room_form_container{
+    display: flex;
+  }
+#room_form_container_one{
+    width: 50%;
+}
+
+
+/* Hide the default radio buttons */
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+/* Style the custom radio buttons */
+.radio-container input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px; /* Adjust spacing between the radio button and label */
+    cursor: pointer;
+    font-size: 10px; /* Adjust font size */
+}
+
+/* Create custom radio button indicator */
+.radio-container input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 14px; /* Adjust size of the radio button */
+    height: 14px; /* Adjust size of the radio button */
+    border: 2px solid #ccc; /* Adjust border color and thickness */
+    border-radius: 50%; /* Make it round */
+    background-color: #fff; /* Adjust background color */
+}
+
+/* Style the radio button indicator when checked */
+.radio-container input[type="radio"]:checked + label:before {
+    background-color: #007bff; /* Adjust background color */
+    border-color: #007bff; /* Adjust border color */
+}
+
+/* Style the label text when radio button is checked */
+.radio-container input[type="radio"]:checked + label {
+    color: #007bff; /* Adjust text color */
+    font-weight: bold; /* Optionally make text bold */
+}
+
+.radio-container{
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+}

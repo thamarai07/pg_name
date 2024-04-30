@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RequestFormController;
 use App\Http\Controllers\AreaMasterController;
 use App\Http\Controllers\BuildingMasterController;
+use App\Http\Controllers\RoomsController;
+
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -49,10 +52,15 @@ Route::put('/requests_form_details_update/{id}',  [RequestFormController::class,
 
 Route::put('/area_master_form_details_update/{id}',  [AreaMasterController::class, 'updatedetails'])->middleware(['auth', 'verified'])->name('area_master_form_details_update.updateDetails');
 
+Route::put('/building_master_form_details_update/{id}',  [BuildingMasterController::class, 'updatedetails'])->middleware(['auth', 'verified'])->name('building_master_form_details_update.updateDetails');
+
 // delete
 Route::put('/requests_form_details_delete/{id}', [RequestFormController::class, 'deletedetails'])->middleware(['auth', 'verified'])->name('requests_form_details_delete.deleteDetails');;
 
 Route::put('/area_master_details_delete/{id}', [AreaMasterController::class, 'deletedetails'])->middleware(['auth', 'verified'])->name('area_master_details_delete.deleteDetails');;
+
+Route::put('/building_master_details_delete/{id}', [BuildingMasterController::class, 'deletedetails'])->middleware(['auth', 'verified'])->name('building_master_details_delete.deleteDetails');;
+
 
 // for sidebar route
 Route::get('/area_master_form', function () {
@@ -63,6 +71,12 @@ Route::get(
     '/building_master_form',
     [BuildingMasterController::class, 'showForm']
 )->middleware(['auth', 'verified'])->name('building_master_form.request_form');
+
+
+Route::get(
+    '/room_master_form',
+    [RoomsController::class, 'showForm']
+)->middleware(['auth', 'verified'])->name('room_master_form.request_form');
 
 
 

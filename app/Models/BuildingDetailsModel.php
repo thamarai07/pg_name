@@ -32,6 +32,7 @@ class BuildingDetailsModel extends Model
         'due_in_advance_from_us_to_building_owner',
         'building_contact_number',
         'date_for_pay_rent_to_owner',
+        'delete_status'
     ];
  
 }
