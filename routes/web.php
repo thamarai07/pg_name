@@ -30,6 +30,8 @@ Route::post('/area_master_form_create', [AreaMasterController::class, 'store'])-
 
 Route::post('/building_master_form_create', [BuildingMasterController::class, 'store'])->name('building_master_form_create');
 
+Route::post('/room_master_form_create', [RoomsController::class, 'store'])->name('room_master_form_create');
+
 // form post router
 
 // viewing tables  router
@@ -38,13 +40,19 @@ Route::get('/request_form_view', [RequestFormController::class, 'fetchData'])->m
 Route::get('/area_master_view', [AreaMasterController::class, 'fetchData'])->middleware(['auth', 'verified'])->name('Property.Area.area_master_view');
 
 Route::get('/building_master_view', [BuildingMasterController::class, 'fetchData'])->middleware(['auth', 'verified'])->name('Property.Building.building_master_view');
+
+
+Route::get('/room_master_view', [RoomsController::class, 'fetchData'])->middleware(['auth', 'verified'])->name('Property.Rooms.room_master_view');
 // viewing tables  router
 
 // viewing update  router
 Route::get('/requests_form_details/{id}', [RequestFormController::class, 'viewData'])->middleware(['auth', 'verified'])->name('requests_form_details.Viewdetails');
 
 Route::get('/area_form_details_show/{id}', [AreaMasterController::class, 'viewData'])->middleware(['auth', 'verified'])->name('area_master_details.Viewdetails');
+
 Route::get('/building_form_details_show/{id}', [BuildingMasterController::class, 'viewData'])->middleware(['auth', 'verified'])->name('building_master_details.Viewdetails');
+
+Route::get('/room_form_details_show/{id}', [RoomsController::class, 'viewData'])->middleware(['auth', 'verified'])->name('room_master_details.Viewdetails');
 // viewing update  router
 
 // update form router
@@ -81,6 +89,11 @@ Route::get(
 
 
 // for view table
+
+// ajax call 
+
+Route::post('/room_and_slot_details_of_the_building',  [RoomsController::class, 'room_and_slot_details_of_the_building'])->name('room_and_slot_details_of_the_building');
+
 Route::get('/request_form_view', [RequestFormController::class, 'fetchData'])->middleware(['auth', 'verified'])->name('Request_form.request_form_view');
 
 
